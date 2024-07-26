@@ -1,0 +1,14 @@
+{
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "args": ["--init-file", "/group/nps/cmorean/setup.sh"]
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "files.associations": {
+        "*.C": "cpp",  // Treat ROOT macros as C++
+        "*.cxx": "cpp"
+    },
+    "cmake.options.statusBarVisibility": "visible"
+}
