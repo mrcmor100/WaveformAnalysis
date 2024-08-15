@@ -16,7 +16,6 @@ Makefile
 *.obj
 
 # IDE files
-.vscode/
 .idea/
 
 # Dependency directories

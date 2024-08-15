@@ -1,36 +1,30 @@
 {
     "version": "2.0.0",
     "tasks": [
-        {
-            "label": "CMake Configure",
-            "type": "shell",
-            "command": "/bin/bash",
-            "args": [
-                "-c", 
-                "module use /group/halla/modulefiles && module load cmake && cmake -S ${workspaceFolder} -B ${workspaceFolder}/build"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "CMake Build",
-            "type": "shell",
-            "command": "/bin/bash",
-            "args": [
-                "-c", 
-                "cmake --build ${workspaceFolder}/build"
-            ],
-            "dependsOn": "CMake Configure",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": [
-                "$gcc"
-            ]
-        }
+      {
+        "label": "Build Local",
+        "type": "shell",
+        "command": "cmake --build build",
+        "group": "build",
+        "dependsOrder": "sequence",
+        "problemMatcher": ["$gcc"],
+        "detail": "Build the project locally using the local preset"
+      },
+      {
+        "label": "Build GitHub CI",
+        "type": "shell",
+        "command": "cmake --build build/github",
+        "group": "build",
+        "problemMatcher": ["$gcc"],
+        "detail": "Build the project using the GitHub CI preset"
+      },
+      {
+        "label": "Build HPC Target",
+        "type": "shell",
+        "command": "cmake --build build/hpc",
+        "group": "build",
+        "problemMatcher": ["$gcc"],
+        "detail": "Build the project using the HPC target preset"
+      }
     ]
-}
+  }

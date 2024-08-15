@@ -1,4 +1,7 @@
 {
+    "cmake.configureOnOpen": true,
+    "cmake.preferredGenerators": ["Ninja"],
+    "cmake.buildDirectory": "${workspaceFolder}/build",
     "terminal.integrated.profiles.linux": {
         "bash": {
             "path": "bash",

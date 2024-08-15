@@ -1,0 +1,42 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+      "major": 3,
+      "minor": 19,
+      "patch": 0
+    },
+    "configurePresets": [
+      {
+        "name": "local",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/local",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug",
+          "CMAKE_PREFIX_PATH": "~/root;~/googletest;~/benchmark"
+        }
+      },
+      {
+        "name": "ci_github",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/github",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Release",
+          "CMAKE_CXX_COMPILER": "g++",
+          "CMAKE_CXX_FLAGS": "-Wall -Wextra -Werror",
+          "CMAKE_PREFIX_PATH": "/ci/path/to/root;/ci/path/to/gtest;/ci/path/to/benchmark"
+        }
+      },
+      {
+        "name": "hpc_target",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/hpc",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Release",
+          "CMAKE_CXX_COMPILER": "/path/to/hpc/compiler",
+          "CMAKE_CXX_FLAGS": "-O3 -march=native -mtune=native",
+          "CMAKE_PREFIX_PATH": "/hpc/path/to/root;/hpc/path/to/gtest;/hpc/path/to/benchmark"
+        }
+      }
+    ]
+  }
+  
