@@ -7,6 +7,15 @@ set(CMAKE_CXX_STANDARD 17)
 option(BUILD_TESTS "Build tests" ON)
 option(ENABLE_COVERAGE "Enable coverage reporting" OFF)
 
+# Load the ROOT module (adjust as necessary)
+execute_process(COMMAND bash -c "/group/nps/cmorean/setup.sh")
+
+# Find the ROOT package
+find_package(ROOT REQUIRED ROOTVecOps)
+
+# Include ROOT headers
+include_directories(${ROOT_INCLUDE_DIRS})
+
 # Include directories
 include_directories(include)
 

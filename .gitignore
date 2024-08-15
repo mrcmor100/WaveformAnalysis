@@ -29,3 +29,6 @@ docs/
 *.log
 *.swp
 *.swo
+
+# CERN ROOT Output
+*.root

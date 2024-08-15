@@ -2,7 +2,7 @@
     "terminal.integrated.profiles.linux": {
         "bash": {
             "path": "bash",
-            "args": ["--init-file", "/group/nps/cmorean/setup.sh"]
+            //"args": ["--init-file", "/group/nps/cmorean/setup.sh"]
         }
     },
     "terminal.integrated.defaultProfile.linux": "bash",

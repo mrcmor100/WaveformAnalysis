@@ -7,7 +7,7 @@
             "command": "/bin/bash",
             "args": [
                 "-c", 
-                "source /group/nps/cmorean/setup.sh && module load cmake && cmake -S ${workspaceFolder} -B ${workspaceFolder}/build"
+                "module use /group/halla/modulefiles && module load cmake && cmake -S ${workspaceFolder} -B ${workspaceFolder}/build"
             ],
             "group": {
                 "kind": "build",
@@ -21,7 +21,7 @@
             "command": "/bin/bash",
             "args": [
                 "-c", 
-                "source /group/nps/cmorean/setup.sh && cmake --build ${workspaceFolder}/build"
+                "cmake --build ${workspaceFolder}/build"
             ],
             "dependsOn": "CMake Configure",
             "group": {
